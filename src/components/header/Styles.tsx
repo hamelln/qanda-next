@@ -31,7 +31,7 @@ const MenuList = styled.div`
   }
 `;
 
-const NavigationLink = styled.a`
+const NavigationLink = styled.a<{ isActive?: boolean }>`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -42,7 +42,8 @@ const NavigationLink = styled.a`
   color: rgb(51, 51, 51);
   cursor: pointer;
   text-decoration: none;
-  /* border-bottom: 2px solid rgb(31, 31, 31); */
+  border-bottom: ${(props) =>
+    props.isActive === true ? "2px solid rgb(31, 31, 31)" : "transparent"};
 `;
 
 const LanguageSelection = styled.span`
