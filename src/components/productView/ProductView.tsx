@@ -1,24 +1,13 @@
 import ItemSlider from "./SwiperItem/ItemSlider";
 import * as S from "./Styles";
-import Slider from "react-slick";
 import VietnamSwiper from "./VietnamSwiper/VietnamSwiper";
+import * as L from "../../../lang/ko.json";
 
 const ProductView = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  const describe = "";
-
   return (
     <S.ProductViewWrapper>
       <S.PageHeadingWrapper>
-        <S.PageHeading>
-          새로운 교육을 만들어 가는<br></br>콴다의 서비스
-        </S.PageHeading>
+        <S.PageHeading>{L.title}</S.PageHeading>
       </S.PageHeadingWrapper>
       <S.ProductViewSection>
         <S.ProductItem>
@@ -27,11 +16,7 @@ const ProductView = () => {
           </S.ProductLeftSide>
           <S.ProductRightSide>
             <S.ProductCardWrapper>
-              <S.ProductCardTitle>
-                전 세계 6,000만 학생이 선택한
-                <br />
-                인공지능 공부앱 콴다
-              </S.ProductCardTitle>
+              <S.ProductCardTitle>{L.info}</S.ProductCardTitle>
               <S.ProductCardDescription>
                 전 세계에서 매월 1,300만 명의 학생이 사용하는 AI 학습
                 플랫폼입니다. 모르는 문제를 찍으면 5초 안에 풀이를 제공해 주고
@@ -39,12 +24,7 @@ const ProductView = () => {
                 명문대 선생님들께 1:1로 질문하고, 커뮤니티에서 친구들과 학습
                 정보를 공유할 수 있습니다.
               </S.ProductCardDescription>
-              <S.ProductCardAward>
-                • 20개국 교육차트 1위 • 센서타워 선정 ‘2021 아시아 태평양
-                어워드’ 대한민국 최고의 교육 앱• Google Play 선정 ‘올해의
-                자기계발 앱’ 우수상 • App Store 선정 ‘한국이 만들고 세계가
-                즐기는 앱’
-              </S.ProductCardAward>
+              <S.ProductCardAward>{L.label}</S.ProductCardAward>
               <S.ProductCardLinks>
                 <S.StoreButtonWrapper>
                   <S.StoreButtonIcon src="https://mathpresso.com/assets/icons/google.svg"></S.StoreButtonIcon>
