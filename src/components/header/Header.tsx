@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import * as S from "./Styles";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(true);
-  function handleCilck(e: React.ChangeEvent<HTMLAnchorElement>) {
-    console.log(123);
-    if (e) console.log(12);
+  const [isActive, setIsActive] = useState(0);
+  function onClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    switch (e.currentTarget.innerText) {
+      case "서비스":
+        setIsActive(0);
+        break;
+      case "뉴스룸":
+        setIsActive(1);
+        break;
+      case "찾아오는 길":
+        setIsActive(2);
+        break;
+      default:
+        setIsActive(0);
+    }
   }
 
   return (
@@ -13,20 +24,20 @@ const Header = () => {
       <S.HeaderWrpper>
         <S.BrandLogo />
         <S.MenuList>
-          <S.NavigationLink isActive={isActive} onClick={handleCilck}>
+          <S.NavigationLink isActive={isActive === 0} onClick={onClick}>
             서비스
           </S.NavigationLink>
           <S.NavigationLink
             href="/ko/press"
-            onClick={handleCilck}
-            isActive={isActive}
+            onClick={onClick}
+            isActive={isActive === 1}
           >
             뉴스룸
           </S.NavigationLink>
           <S.NavigationLink
             href="/ko/contact"
-            isActive={isActive}
-            onClick={handleCilck}
+            isActive={isActive === 2}
+            onClick={onClick}
           >
             찾아오는 길
           </S.NavigationLink>
@@ -34,8 +45,7 @@ const Header = () => {
             href="https://blog.mathpresso.com/"
             target="_blank"
             rel="noreferrer noopener"
-            isActive={isActive}
-            onClick={handleCilck}
+            onClick={onClick}
           >
             블로그
           </S.NavigationLink>
