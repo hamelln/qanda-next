@@ -4,18 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 import ProductView from "../components/productView/ProductView";
 import styles from "../styles/Home.module.css";
+import { getSortedPostsData } from "../lib/posts";
 
-const Home: NextPage = () => {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }: any) {
   return (
     <>
+      {console.log(allPostsData)}
       <Link href="/">
         <a>Home</a>
       </Link>
-      <Link href="/ProductView">
-        <a>ProductView</a>
+      <Link href="/product">
+        <a>product</a>
       </Link>
     </>
   );
-};
-
-export default Home;
+}

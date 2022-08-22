@@ -24,7 +24,11 @@ const Header = () => {
       <S.HeaderWrpper>
         <S.BrandLogo />
         <S.MenuList>
-          <S.NavigationLink isActive={isActive === 0} onClick={onClick}>
+          <S.NavigationLink
+            href="/ko/product"
+            isActive={isActive === 0}
+            onClick={onClick}
+          >
             서비스
           </S.NavigationLink>
           <S.NavigationLink
